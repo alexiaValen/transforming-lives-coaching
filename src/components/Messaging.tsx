@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+type Message = { id: number; sender: string; content: string; timestamp: string; type: 'text' | 'voice'; duration?: string };
+
 export default function Messaging() {
   const [selectedConversation, setSelectedConversation] = useState('coach');
   const [newMessage, setNewMessage] = useState('');
@@ -40,7 +42,7 @@ export default function Messaging() {
     }
   ];
 
-  const messages = {
+  const messages: Record<string, Message[]> = {
     coach: [
       {
         id: 1,
@@ -114,7 +116,7 @@ export default function Messaging() {
   };
 
   const currentConversation = conversations.find(c => c.id === selectedConversation);
-  const currentMessages = messages[selectedConversation as keyof typeof messages] || [];
+  const currentMessages = messages[selectedConversation] ?? [];
 
   const handleSendMessage = () => {
     if (!newMessage.trim()) return;
@@ -233,7 +235,7 @@ export default function Messaging() {
                         <div className="w-1/3 h-1 bg-white rounded-full"></div>
                       </div>
                     </div>
-                    <span className="text-xs opacity-75">{(message as any).duration}</span>
+                    <span className="text-xs opacity-75">{message.duration}</span>
                   </div>
                 ) : (
                   <p className="text-sm">{message.content}</p>

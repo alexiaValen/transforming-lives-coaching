@@ -279,7 +279,7 @@ export default function PaymentForm({ onClose }: PaymentFormProps) {
           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl">🅿️</span>
           </div>
-          <p className="text-gray-600 mb-4">You'll be redirected to PayPal to complete your payment</p>
+          <p className="text-gray-600 mb-4">You will be redirected to PayPal to complete your payment</p>
           <button
             onClick={() => {
               setIsProcessing(true);

@@ -226,7 +226,7 @@ export default function ProgressTracking() {
       </div>
 
       <div className="bg-white rounded-lg shadow p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">This Week's Achievements</h3>
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">This Week&apos;s Achievements</h3>
         <div className="space-y-3">
           <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg">
             <span className="text-green-500">🎉</span>

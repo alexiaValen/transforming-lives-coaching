@@ -189,7 +189,7 @@ export default function BookingForm({ onClose }: BookingFormProps) {
           <div className="ml-3">
             <p className="text-sm text-blue-700">
               <strong>Note:</strong> Dr. Sarah Johnson is available Monday-Friday, 9 AM - 5 PM PST. 
-              You'll receive a confirmation email with video call details within 24 hours.
+              You will receive a confirmation email with video call details within 24 hours.
             </p>
           </div>
         </div>

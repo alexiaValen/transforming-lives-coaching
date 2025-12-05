@@ -6,11 +6,14 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
+  "smoke-test": "node scripts/smoke-test.js",
+  "generate-icons": "node scripts/generate-icons.js",
     "lint": "eslint"
   },
   "dependencies": {
     "lucide-react": "^0.552.0",
     "next": "15.5.3",
+    "next-auth": "^4.24.13",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

@@ -18,39 +18,39 @@ export default function DailyCheckin() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const affirmations = [
-    "I am worthy of health and happiness",
-    "My body is healing and getting stronger every day",
-    "I choose nourishing foods that fuel my body",
-    "I am in control of my health journey",
-    "Every small step I take matters",
+    'I am worthy of health and happiness',
+    'My body is healing and getting stronger every day',
+    'I choose nourishing foods that fuel my body',
+    'I am in control of my health journey',
+    'Every small step I take matters',
     "I trust my body's wisdom",
-    "I am grateful for my body and all it does for me",
-    "I deserve to feel energized and vibrant"
+    'I am grateful for my body and all it does for me',
+    'I deserve to feel energized and vibrant'
   ];
 
   const dailyActions = [
-    "Drink 8 glasses of water",
-    "Take a 10-minute walk",
-    "Practice deep breathing for 5 minutes",
-    "Eat a serving of vegetables",
-    "Write in gratitude journal",
-    "Take supplements as prescribed",
-    "Get 15 minutes of sunlight",
-    "Practice mindful eating"
+    'Drink 8 glasses of water',
+    'Take a 10-minute walk',
+    'Practice deep breathing for 5 minutes',
+    'Eat a serving of vegetables',
+    'Write in gratitude journal',
+    'Take supplements as prescribed',
+    'Get 15 minutes of sunlight',
+    'Practice mindful eating'
   ];
 
   const scriptures = [
     {
-      verse: "3 John 1:2",
-      text: "Dear friend, I pray that you may enjoy good health and that all may go well with you, even as your soul is getting along well."
+      verse: '3 John 1:2',
+      text: 'Dear friend, I pray that you may enjoy good health and that all may go well with you, even as your soul is getting along well.'
     },
     {
-      verse: "1 Corinthians 6:19-20",
-      text: "Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own; you were bought at a price. Therefore honor God with your bodies."
+  verse: '1 Corinthians 6:19-20',
+  text: 'Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own; you were bought at a price. Therefore honor God with your bodies.'
     },
     {
-      verse: "Psalm 139:14",
-      text: "I praise you because I am fearfully and wonderfully made; your works are wonderful, I know that full well."
+  verse: 'Psalm 139:14',
+  text: 'I praise you because I am fearfully and wonderfully made; your works are wonderful, I know that full well.'
     }
   ];
 
@@ -76,11 +76,7 @@ export default function DailyCheckin() {
     setTimeout(() => setIsSubmitted(false), 3000);
   };
 
-  const getSliderColor = (value: number) => {
-    if (value <= 3) return 'bg-red-500';
-    if (value <= 6) return 'bg-yellow-500';
-    return 'bg-green-500';
-  };
+  // getSliderColor was removed to satisfy lint rules; colors are now handled via tailwind utility classes inline
 
   const getEmojiForValue = (field: string, value: number) => {
     const emojis = {
@@ -114,8 +110,8 @@ export default function DailyCheckin() {
 
         {/* Today's Scripture */}
         <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
-          <h3 className="font-semibold text-blue-900 mb-2">Today's Scripture</h3>
-          <p className="text-blue-800 italic mb-2">"{todaysScripture.text}"</p>
+            <h3 className="font-semibold text-blue-900 mb-2">Today&apos;s Scripture</h3>
+            <p className="text-blue-800 italic mb-2">&ldquo;{todaysScripture.text}&rdquo;</p>
           <p className="text-blue-700 text-sm font-medium">- {todaysScripture.verse}</p>
         </div>
 
@@ -161,7 +157,7 @@ export default function DailyCheckin() {
         {/* Journaling */}
         <div className="mb-6">
           <h4 className="font-medium text-gray-900 mb-2">Journal Reflection</h4>
-          <p className="text-sm text-gray-600 mb-3">How are you feeling today? What's on your mind?</p>
+          <p className="text-sm text-gray-600 mb-3">How are you feeling today? What is on your mind?</p>
           <textarea
             value={checkinData.journalEntry}
             onChange={(e) => setCheckinData(prev => ({ ...prev, journalEntry: e.target.value }))}
@@ -186,7 +182,7 @@ export default function DailyCheckin() {
 
         {/* Daily Affirmation */}
         <div className="mb-6">
-          <h4 className="font-medium text-gray-900 mb-2">Today's Affirmation</h4>
+    <h4 className="font-medium text-gray-900 mb-2">Today&apos;s Affirmation</h4>
           <p className="text-sm text-gray-600 mb-3">Choose an affirmation to carry with you today</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {affirmations.map((affirmation, index) => (
@@ -208,7 +204,7 @@ export default function DailyCheckin() {
         {/* Daily Actions */}
         <div className="mb-6">
           <h4 className="font-medium text-gray-900 mb-2">Daily Action Steps</h4>
-          <p className="text-sm text-gray-600 mb-3">Check off the healthy actions you've completed today</p>
+          <p className="text-sm text-gray-600 mb-3">Check off the healthy actions you have completed today</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {dailyActions.map((action, index) => (
               <label
@@ -238,8 +234,8 @@ export default function DailyCheckin() {
 
         {/* Tomorrow's Intention */}
         <div className="mb-6">
-          <h4 className="font-medium text-gray-900 mb-2">Tomorrow's Intention</h4>
-          <p className="text-sm text-gray-600 mb-3">What's one thing you want to focus on tomorrow?</p>
+          <h4 className="font-medium text-gray-900 mb-2">Tomorrow&apos;s Intention</h4>
+            <p className="text-sm text-gray-600 mb-3">What is one thing you want to focus on tomorrow?</p>
           <input
             type="text"
             value={checkinData.dailyAction}

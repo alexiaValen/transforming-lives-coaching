@@ -26,7 +26,7 @@ interface Alert {
 
 export default function GlucoseTracker() {
   const [view, setView] = useState<'client' | 'coach'>('client');
-  const [clientId, setClientId] = useState('user123');
+  const [clientId] = useState('user123');
   const [entries, setEntries] = useState<GlucoseEntry[]>([]);
   const [newEntry, setNewEntry] = useState({
     glucose: '',
@@ -58,7 +58,7 @@ export default function GlucoseTracker() {
               id: key.replace('glucose:', ''),
               entries: data ? JSON.parse(data) : []
             };
-          } catch (error) {
+          } catch {
             return {
               id: key.replace('glucose:', ''),
               entries: []
